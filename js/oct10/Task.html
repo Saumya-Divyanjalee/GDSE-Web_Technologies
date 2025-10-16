@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+  function check(){
+    let a =5;
+    if(a%2==0){
+      console.log("even");
+    }else {
+      console.log("odd");
+    }
+  }
+  check();
+
+  const check1=function(){
+    let a =100;
+    if(a%2==0){
+      console.log("even");
+    }else {
+      console.log("odd");
+    }
+  }
+  check1();
+
+  const check2=()=>{
+    let a =4;
+    if(a%2==0){
+      console.log("even");
+    }else {
+      console.log("odd");
+    }
+  }
+  check2();
+
+
+
+
+
+  function check4(num){
+    let sum = 0;
+    for(let i=0;i<num;i++){
+      sum+=(num+i);
+    }
+    return sum;
+  }
+  let msg = check4(15);
+  console.log(msg);
+
+
+  const check5=function(num){
+    let sum = 0;
+     for(let i=0;i<num;i++){
+     sum+=(num+i);
+     }
+     return sum;
+  }
+  let msg1 =check5(15);
+  console.log(msg1);
+
+  const check6=(num)=>{
+
+    let sum = 0;
+    for(let i=0;i<num;i++){
+      sum+=(num+i);
+
+    }
+    return sum;
+  }
+  let msg2 =check6(3);
+  console.log(msg2);
+
+
+</script>
+
+</body>
+</html>
