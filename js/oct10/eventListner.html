@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+  <style>
+    #bulb{
+      width: 100px;
+      border-radius: 100%;
+      border: 1px solid gray;;
+      aspect-ratio: 1/1;
+    }
+
+    #sq{
+      width: 200px;
+      border-radius: 50%;
+      border: 1px solid gray;
+      aspect-ratio: 1/1;
+    }
+
+  </style>
+</head>
+<body>
+<div id ="bulb"></div>
+
+<button id="btn">ON</button>
+
+<div id="sq"><div id="num">0</div></div>
+<button id="btn2">START</button>
+
+
+
+<script>
+  document.getElementById('btn').addEventListener('click', ()=>{
+    if(document.getElementById('btn').innerText === 'ON'){
+      document.getElementById('bulb').style.background= 'yellow';
+      document.getElementById('btn').innerText = 'OFF';
+
+
+    }else{
+      document.getElementById('bulb').style.background= 'none';
+      document.getElementById('btn').innerText = 'ON';
+    }
+
+  });
+
+  const num = document.getElementById('num');
+  const btn = document.getElementById('btn');
+
+  var interval;
+
+  document.getElementById('btn').addEventListener('click', ()=>{
+    if(btn.innerText === 'START'){
+      btn.innerText = 'STOP';
+      interval = setInterval(()=>{
+        btn.innerText = +num.innerText+1;
+      },500)
+
+
+    }else{
+      btn.innerText = 'START';
+      clearInterval(interval);
+
+    }
+  })
+
+
+
+  //
+  // document.getElementById('btn2').addEventListener('click', ()=>{
+  //
+  //   if(document.getElementById('btn2').innerText === 'ON'){
+  //     interval = setInterval(() => {
+  //       var txt = document.getElementsByTagName('num')[0].innerText;
+  //       if(txt == 20) {
+  //         clearInterval(interval);
+  //       }
+  //
+  //       txt = +txt + 1;
+  //
+  //       document.getElementsByTagName('num')[0].innerText = txt;
+  //
+  //     }, 500)
+  //   }
+
+
+
+
+  // })
+</script>
+
+</body>
+</html>

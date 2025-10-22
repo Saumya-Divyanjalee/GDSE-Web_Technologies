@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    #box1{
+      width: 200px;
+      aspect-ratio: 1/1;
+      background:lightblue;
+    border:1px solid blue;
+  </style>
+</head>
+<body>
+<h1 id="txt"></h1>
+<button>Click</button>
+<div id="box1"></div>
+
+
+
+<label for="input1">Enter Your Name</label>
+<input type="text" id="input1">
+
+
+
+
+<script src="assets/lib/jquery-3.7.1.min.js"></script>
+<script>
+  // document.getElementsByTagName('button')[0].addEventListener('click', function() {
+  //   console.log('clicked');
+  //
+  // })
+
+
+
+  $('#input1').on('focus', function () {
+    console.log('Focused');
+  })
+
+  $('#input1').on('blur', function () {
+    console.log('Blur');
+  })
+
+  $('#input1').on('keydown', function() {
+    console.log('Keydown');
+
+  })
+  $('#input1').on('keypress', function(e) {
+    console.log('KeyPress');
+  })
+  $('#input1').on('keyup', function(e) {
+    console.log('KeyUp');
+  })
+
+
+  $('button').eq(0).on('click', function() {
+    console.log('singel clicked');
+
+  })
+
+
+  $('button').eq(0).on('dblclick', function() {
+    console.log("double clicked");
+
+  })
+
+
+  $('#box1').on('mouseenter', function() {
+    console.log('mouseenter');
+  })
+
+  $('#box1').on('mouseleave', function() {
+    console.log('mouseleave');
+  })
+  $('box1').on('mouseover', function() {
+    console.log('mouseover');
+  })
+
+  $('box1').on('mousedown', function() {
+    console.log('mousedown');
+  })
+
+  $('box1').on('mouseup', function() {
+    console.log('mouseup');
+  })
+
+  $('#input1').on('keypress', function() {
+    var value=$('input1').val();
+    $('#txt').text(value);
+
+  })
+
+  $('#input1').on('keyup', function(e) {
+    console.log(e.which);
+    if(e.which == 13){
+      var value =$('input1').val();
+      $('#txt').text(value);
+    }
+
+  })
+</script>
+
+
+</body>
+</html>
