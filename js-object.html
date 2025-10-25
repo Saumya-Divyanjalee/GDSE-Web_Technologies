@@ -38,19 +38,58 @@
 
   ////use class syntax make template
 
+  // class Student {
+  //   constructor(f_name,l_name,address) {
+  //     this.f_name = f_name;
+  //     this.l_name = l_name;
+  //     this.address = address;
+  //
+  // }
+  // }
+  // var s3 =new Student("sau","div","panadura");
+  // console.log(s3);
+  //
+  // s3.f_name="meow";
+  // console.log(s3.f_name);
+
+  //js not having private machinism
+  //_f_name-developers standered , start _ underscord , it is consider private
+
   class Student {
     constructor(f_name,l_name,address) {
-      this.f_name = f_name;
-      this.l_name = l_name;
-      this.address = address;
+      this._f_name = f_name;
+      this._l_name = l_name;
+      this._address = address;
 
-  }
-  }
-  var s3 =new Student("sau","div","panadura");
-  console.log(s3);
+    }
+    get f_name() {
+      return this._f_name;
+    }
+    get l_name() {
+      return this._l_name;
+    }
+    get address() {
+      return this._address;
+    }
 
-  s3.f_name="meow";
-  console.log(s3.f_name);
+    set f_name(f_name) {
+      this._f_name = f_name;
+    }
+    set l_name(l_name) {
+      this._l_name = l_name;
+    }
+    set address(address) {
+      this._address = address;
+    }
+  }
+
+  var s4 = new Student("sau","div","panadura");
+  console.log(s4);
+
+  console.log(s4.f_name);
+
+
+
 
 
 
